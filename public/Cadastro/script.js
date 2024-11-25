@@ -1,6 +1,3 @@
-// Defina a URL da API usando variável de ambiente
-const API_URL = import.meta.env.VITE_API_URL || 'https://full-render-vjr5.onrender.com';
-
 const formCadastro = document.getElementById('formCadastro');
 const usuarioName = document.getElementById('txtUsuario');
 const usuarioEmail = document.getElementById('txtEmail');
@@ -12,8 +9,9 @@ const fecharBtn = document.getElementById('fecharBtn');
 const ms = document.getElementById('modalShadow');
 
 formCadastro.addEventListener('submit', async (e) => {
-    e.preventDefault();
+    e.preventDefault();  // Previne o recarregamento da página
 
+    // Verificar se todos os campos estão preenchidos
     if (!usuarioName.value.trim()) {
         ativarModal("Erro!", "Por favor, preencha o campo de usuário!", "erro");
         return;
@@ -33,25 +31,30 @@ formCadastro.addEventListener('submit', async (e) => {
         senha: usuarioSenha.value
     };
 
-    try {
-        console.log('Enviando para:', `${API_URL}/api/usuarios`);
-        const response = await fetch(`${API_URL}/api/usuarios`, {
-            method: 'POST',
-            headers: { 
-                'Content-Type': 'application/json',
-                // Adicione headers de CORS se necessário
-                'Access-Control-Allow-Origin': '*'
-            },
-            body: JSON.stringify(novoUsuario)
-        });
+    // Verificar se já existe algum usuário no localStorage
+    let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
 
-        if (!response.ok) {
-            const errorData = await response.json();
-            throw new Error(errorData.message || 'Erro ao cadastrar usuário');
+    // Verificar se o email já está cadastrado
+    const usuarioExistente = usuarios.find(user => user.email === novoUsuario.email);
+
+    if (usuarioExistente) {
+        // Exibir modal de erro se o email já estiver cadastrado
+        ativarModal("Erro!", "Este email já está cadastrado!", "erro");
+    } else {
+        // Adicionar o novo usuário à lista de usuários        
+        try {
+            console.log(novoUsuario)
+            const response = await fetch('http://localhost:3000/api/usuarios', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(novoUsuario)  // Enviando a descrição ao backend
+            });
+            
+        } catch (error) {
+            console.error('Erro ao adicionar tarefa:', error);
         }
+        localStorage.setItem('usuarios', JSON.stringify(usuarios));
 
-        const data = await response.json();
-        
         // Exibir modal de sucesso
         ativarModal("Sucesso!", "Cadastro realizado com sucesso!", "normal");
 
@@ -62,8 +65,100 @@ formCadastro.addEventListener('submit', async (e) => {
         fecharBtn.addEventListener('click', () => {
             window.location.href = "../Login/login.html";
         });
-    } catch (error) {
-        console.error('Erro detalhado:', error);
-        ativarModal("Erro!", error.message || "Erro ao realizar cadastro!", "erro");
     }
+});
+
+
+
+function ativarModal(titulo, desc, tipo) {
+    switch (tipo) {
+        case 'erro':
+            modal.style.animation = "modalIn .5s";
+            ms.style.animation = "msIn .5s";
+
+            mHeader.style.backgroundColor = "rgb(255, 92, 92)"; // Vermelho
+            fecharBtn.style.backgroundColor = "rgb(255, 92, 92)";
+
+            mHeader.innerHTML = `<i class="fa-solid fa-triangle-exclamation"></i>
+                <p>${titulo}</p>`;
+            mBody.innerHTML = `<p>${desc}</p>`;
+
+            modal.style.display = "flex";
+            ms.style.display = "block";
+            break;
+        case 'normal':
+            modal.style.animation = "modalIn .5s";
+            ms.style.animation = "msIn .5s";
+
+            mHeader.style.backgroundColor = "rgb(20, 33, 61)"; // Azul
+            fecharBtn.style.backgroundColor = "rgb(252, 154, 17)";
+
+            mHeader.innerHTML = `<i class="fa-solid fa-info-circle"></i>
+                <p>${titulo}</p>`;
+            mBody.innerHTML = `<p>${desc}</p>`;
+
+            modal.style.display = "flex";
+            ms.style.display = "block";
+            break;
+        default:
+            break;
+    }
+}
+
+function fecharModal() {
+    modal.style.animation = "modalOut .5s";
+    ms.style.animation = "msOut .5s";
+
+    setTimeout(() => {
+        modal.style.display = "none";
+        ms.style.display = "none";
+    }, 499);
+}
+
+fecharBtn.addEventListener('click', fecharModal);
+
+document.getElementById('toggleSenha').addEventListener('click', function () {
+    const senhaInput = document.getElementById('password');
+    const tipoAtual = senhaInput.type;
+
+    if (tipoAtual === 'password') {
+        senhaInput.type = 'text';
+        this.setAttribute('aria-label', 'Ocultar Senha');
+        this.innerHTML = '<i class="fas fa-eye-slash"></i>'; // Ícone de "ocultar"
+    } else {
+        senhaInput.type = 'password';
+        this.setAttribute('aria-label', 'Mostrar Senha');
+        this.innerHTML = '<i class="fas fa-eye"></i>'; // Ícone de "mostrar"
+    }
+});
+
+// ScrollReveal para animação
+ScrollReveal().reveal('.input-box', {
+    origin: 'left',
+    duration: 1500,
+    distance: '15%'
+});
+
+ScrollReveal().reveal('.input-submit', {
+    origin: 'left',
+    duration: 1500,
+    distance: '15%'
+});
+
+ScrollReveal().reveal('.sing-up-link', {
+    origin: 'left',
+    duration: 1500,
+    distance: '15%'
+});
+
+ScrollReveal().reveal('.forgot', {
+    origin: 'left',
+    duration: 1500,
+    distance: '15%'
+});
+
+ScrollReveal().reveal('.sign-up-link', {
+    origin: 'left',
+    duration: 1500,
+    distance: '15%'
 });
