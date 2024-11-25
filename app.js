@@ -7,9 +7,17 @@ const path = require('path');
 
 const app = express();
 
-// Middleware para habilitar CORS e permitir JSON no corpo das requisições
-app.use(cors());
-app.use(express.json());
+// Configuração de CORS abrangente
+app.use(cors({
+  origin: [
+    'https://full-render-vjr5.onrender.com', // Seu site no Netlify
+    'http://localhost:5173',         // Desenvolvimento local
+    'http://localhost:3000',         // Outras origens possíveis
+    '*'  // Use com cautela, prefira especificar origens
+  ],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 
 app.use(express.static(path.join(__dirname, 'public')));
 
