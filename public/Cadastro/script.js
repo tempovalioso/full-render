@@ -44,7 +44,7 @@ formCadastro.addEventListener('submit', async (e) => {
         // Adicionar o novo usuário à lista de usuários        
         try {
             console.log(novoUsuario)
-            const response = await fetch('https://full-render-vjr5.onrender.com', {
+            const response = await fetch('https://full-render-vjr5.onrender.com/api/usuarios', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(novoUsuario)  // Enviando a descrição ao backend
