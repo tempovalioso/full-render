@@ -1,0 +1,62 @@
+#progress_bar {
+    display: none;
+}
+
+h2 .result-thnks {
+    font-size: 30px;
+}
+
+.result-title {
+    font-size: 10px;
+}
+
+.result-title-dica {
+    font-size: 40px;
+}
+
+
+p .result-text {
+    font-size: 20px;
+}
+
+.result-title-italic {
+    font-size: 22px;
+    text-align: left;
+    padding-top: 40px;
+    font-style: italic;
+}
+
+p .link {
+    font-size: 20px;
+}
+
+.button-log-cad {
+    text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+    .btn-default {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    h2 .result-thnks {
+        font-size: 50px;
+    }
+
+    h1 .print-result {
+        font-size: 25px;
+    }
+
+    .result-title {
+        font-size: 5px;
+    }
+
+    .btn-default {
+        width: 100%;
+        font-size: 12px;
+    }
+}
+
+

@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Importando os icones, usados para os botões de mídia social.-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--Importando o JQUERY-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
+    <!--Linkando o HTML a outros css.-->
+    <link rel="stylesheet" href="quem.css">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <!--Linkando ao head, um favicon do site.-->
+    <link rel="shortcut icon" href="../img/TempoValioso-icon.png">
+    <!--Importando o efeito de revelação de scrolagem das páginas.-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <title>Quem somos</title>
+</head>
+<body>
+    <header>
+        <nav id="navbar">
+            <a href="../index.html">
+                <img src="../img/TempoValioso-logo.png" alt="Imagem de logo, do Tempo Valioso">
+            </a>
+            <ul id="nav_list">
+                <li class="nav-item active">
+                    <a href="../index.html">Início</a>
+                </li>
+                <li class="nav-item active">
+                    <a href="../Procastinação/procrastinacao.html">Procrastinação</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../Questionário/questionario.html">Descubra seu nível</a>
+                </li>
+                <li class="nav-item">
+                    <a href="quem.html">Quem somos</a>
+                </li>
+            </ul>
+
+            <div class="container">
+                <div class="user-btn">
+                    <button onclick="toggleMenu('dropdownMenu')">
+                        <a class="user-btn"><i class="fa-solid fa-user"></i></a>
+                    </button>
+                    <div id="dropdownMenu" class="dropdown-menu">
+                        <a href="../index.html" onclick="logout()" type="submit">
+                            <i class="fa-solid fa-door-open"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+           <div class="container-hidden"></div>
+
+            <button id="mobile-btn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </nav>
+
+        <div id="mobile_menu">
+            <ul id="mobile_nav_list">
+                <li class="nav-item">
+                    <a href="../index.html">Início</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../Procastinação/procrastinacao.html">Procrastinação</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../Questionário/questionario.html">Descubra seu nível</a>
+                </li>
+                <li class="nav-item">
+                    <a href="quem.html">Quem somos</a>
+                </li>
+            </ul>
+
+            <div class="container-mobile">
+
+                <div class="user-btn-mobile"> 
+                    <button onclick="toggleMenu('dropdownMenuMobile')" >
+                        <a class="user-btn-mobile">
+                            <i class="fa-solid fa-user"></i>
+                        </a>
+                    </button>
+                    <div id="dropdownMenuMobile" class="dropdown-menu">
+                        <a href="../index.html" onclick="logout()">
+                            <i class="fa-solid fa-door-open"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+    </header>
+    
+    <div class="container-quem">
+    <section id="port">
+        <div class="port_content">
+            
+            <h2 class="name1">
+                Tempo Valioso <br>
+                <span>Projetado para:</span>
+            </h2>
+            
+            <p class="description">
+                Investigar os padrões de procrastinação dos usuários e fornecer orientação personalizada para ajudá-los a superar esse comportamento, visando melhorar sua gestão do tempo e aumentar sua produtividade.
+            </p>
+            
+            <div class="social-media-buttons">
+                <a class="social-media-item" target="_blank" href="https://www.instagram.com/_tempovalioso/">
+                    <i class="fa-brands fa-instagram"></i>
+                
+                <a class="social-media-item" target="_blank" href="https://mail.google.com/mail/?view=cm&fs=1&to=suporte.tempovalioso@gmail.com&su=Assunto&body=Mensagem">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+        
+        
+    </section>
+    
+    <section id="port2">
+        <div class="port_content">
+
+            <div id="img_port">
+                <div class="img-dev">
+                    <img src="../img/Adeildo.png" alt="Adeildo da Silva"> 
+                </div>
+            </div>
+            
+            <h2 class="name2">
+                Adeildo José da Silva
+            </h2>
+            
+            <div class="fn2">
+            <span>Responsável por:</span>
+            </div>
+
+            <p class="description">
+                <span>Revisão e Correção</span> <br>
+                <span>Defeitos na Escrita:</span> Principais erros de escrita e de concordância no texto, para melhor entendimento no que se refere.
+            </p>
+
+            <div class="fn2">
+                <span>Sobre mim</span>
+            </div>       
+
+            <p class="description">
+                Olá, sou Adeildo e faço parte do projeto de criação de um site com questionário. Minha principal função é revisar os textos, garantindo que as mensagens sejam transmitidas de forma clara e correta. Adorei o processo de polir os detalhes e ajudar a tornar a linguagem mais acessível para todos. Acredito que uma comunicação bem-feita pode transformar a experiência do usuário e estou feliz em contribuir com o projeto.
+            </p>
+        </div>
+    </section>
+    
+        
+    <section id="port3">
+        <div class="port_content">
+            
+            <div id="img_port">
+                <div class="img-dev">
+                    <img src="../img/Bruno-Muniz.png" alt="Bruno da Silva Muniz">    
+                </div>
+            </div>
+
+            <h2 class="name2">
+                Bruno da Silva Muniz <br>
+            </h2>
+            <div class="fn2">
+                <span>Responsável por:</span>
+            </div>
+
+            <p class="description">
+                <span>Desenvolvimento Web </span> <br>
+                <span>Front-End:</span> Planejamento de estrutura, Definição das Telas, Paleta de Cores, dando condição total ao projeto <br>
+                <span>Back-End:</span> Todo o Enredo do Banco de Dados, Conexão com Node.js.
+            </p>
+            
+            
+            <div class="fn2">
+                <span>Sobre mim</span>
+            </div>      
+            
+            
+            <p class="description">
+                Olá, eu me chamo Bruno, e estou tendo uma paixão muito grande em programação, ainda em fase de aprendizado, mas com uma vontade enorme de conhecimento em diferentes áreas da tecnologia especificamente em Desenvolvimento Web e aplicações de site. Desenvolver este projeto foi incrível para mim, afinal, como um procrastinador de primeira, ele me ajudou bastante a entender esses processos e conseguir uma melhoria no meu caso. Não paro por aqui, e com o Tempo Valioso, tenho muitas ideias para implementar e tornar um site mais completo! Espero de coração que este projeto ajude a entender melhor esse problema!
+            </p>
+
+            <div class="social-media-buttons">
+                <a class="social-media-item" target="_blank" href="https://www.instagram.com/_brunoohw/"> 
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a class="social-media-item" target="_blank" href="https://mail.google.com/mail/?view=cm&fs=1&to=brunoohw2410@gmail.com&su=Assunto&body=Mensagem">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+                </a>
+                <a class="social-media-item" target="_blank" href="https://www.linkedin.com/in/bruno-silva-muniz-26237725b/">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a class="social-media-item" target="_blank" href="https://github.com/brunoohw">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+            </div>
+        </div>
+        
+    </section>
+    
+    <section id="port4">
+        <div class="port_content">
+
+            <div id="img_port">
+                <div class="img-dev">
+                    <img src="../img/images.png" alt="Daniel Natan">    
+                </div>
+            </div>
+
+            <h2 class="name2">
+                Daniel Natan <br>
+            </h2>
+
+            <div class="fn2">
+                <span>Responsável por:</span>
+            </div>
+
+            <p class="description">
+                <span>Conteudo para o site</span> <br>
+                <span>Pesquisa/Conteúdo:</span> Pesquisa e seleção de conteúdos para o projeto<br>
+            </p>
+            
+            
+            <div class="fn2">
+                <span>Sobre mim:</span>
+            </div>       
+            
+            
+            <p class="description">
+                Meu nome é Daniel Natan, tenho um grande interesse em, leitura, tecnologia, arte, esportes, etc., e tento sempre me envolver em atividades que me permitam expandir meus conhecimentos e habilidades. Acredito que o aprendizado contínuo é essencial para a evolução, tanto no âmbito pessoal quanto profissional. 
+                Sou uma pessoa criativa, organizada e estou sempre em busca de novos desafios que me permitam crescer e fazer a diferença. Gosto de trabalhar em equipe e acredito que boas colaborações geram os melhores resultados. 
+                No futuro, espero continuar a me desenvolver e explorar novas oportunidades que me ajudem a alcançar meus objetivos e a contribuir positivamente para o mundo ao meu redor e que o Tempo Valioso possa te ajudar bastante.
+            </p>
+
+            <div class="social-media-buttons">
+                <a class="social-media-item" target="_blank" href="https://www.instagram.com/daniel.nnatan/">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+        
+    </section>
+    
+    <section id="port5">
+        <div class="port_content">
+
+            <div id="img_port">
+                <div class="img-dev">
+                    <img src="../img/images.png" alt="Eric">    
+                </div>
+            </div>
+
+            <h2 class="name2">
+                Eric Samuel Santos Lima<br>
+            </h2>
+
+            <div class="fn2">
+                <span>Responsável por:</span>
+            </div>
+            
+            <p class="description">
+                <span>Desenvolvimento Web </span> <br>
+                <span>Front-End:</span> Planejamento de estrutura, Definição das Telas, Paleta de Cores, dando condição total ao projeto <br><span>Desenvolvimento Web </span> <br>
+            </p>
+            
+            
+            <div class="fn2">
+                <span>Sobre mim:</span>
+            </div>                
+            
+            <p class="description">
+                Sou apaixonado por resolver problemas e explorar novas tecnologias. Desde pequeno, sempre me interessei por computadores e programação, e agora estou aprofundando meus conhecimentos em desenvolvimento de software e segurança da informação. Gosto de trabalhar em projetos colaborativos e estou sempre em busca de novos desafios para aprimorar minhas habilidades. Além disso, tenho interesse em inteligência artificial e como ela pode transformar diversas áreas. E espero muito que o Tempo Valioso, possa te ajudar a ser uma pessoa melhor.
+            </p>
+
+            <div class="social-media-buttons">
+                <a class="social-media-item" target="_blank" href="https://www.instagram.com/ericlx_">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+        
+    </section>
+    
+    <section id="port6">
+        <div class="port_content">
+
+            <div id="img_port">
+                <div class="img-dev">
+                    <img src="../img/images.png" alt="Gabriel Leite dos Santos">    
+                </div>
+            </div>
+            
+            <h2 class="name2">
+                Gabriel Leite dos Santos <br>
+            </h2>
+            
+            <div class="fn2">
+                <span>Responsável por:</span>
+            </div>
+            
+            <p class="description">
+                <span>Desenvolver Manual Técnico</span> <br>
+                <span>Manual Técnico</span> Garantir que o manual seja bem estruturado, com informações organizadas de maneira lógica e acessível e que todas as informações técnicas estejam corretas, completas e atualizadas.<br>
+            </p>
+            
+            <div class="fn2">
+                <span>Sobre mim:</span>
+            </div>
+            
+            <p class="description">
+                Oi, eu sou o Gabriel, tenho 18 anos e sou aquele tipo de pessoa que gosta de fazer tudo bem feito, mas sem perder a leveza. Sou apaixonado por tecnologia e por ajudar outras pessoas a entenderem como tudo funciona. Recentemente, tive a oportunidade de trabalhar no manual técnico de um projeto chamado Tempo Valioso um projeto incrível para ajudar as pessoas com a procrastinação. Foi um desafio e tanto, mas também muito divertido! Consegui transformar instruções complicadas em algo simples e direto, como se estivesse explicando para um amigo. Além de curtir resolver esses quebra-cabeças técnicos, também adoro jogar bola com os amigos, maratonar séries e descobrir músicas novas.
+            </p>
+            
+            <div class="social-media-buttons">
+                <a class="social-media-item" target="_blank" href="https://www.instagram.com/Biel__santos017/">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a class="social-media-item" target="_blank" href="https://mail.google.com/mail/?view=cm&fs=1&to=gabrieleite570@gmail.com&su=Assunto&body=Mensagem">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+        
+    </section>
+    
+    <section id="port7">
+        <div class="port_content">
+            
+            <div id="img_port">
+                <div class="img-dev">
+                    <img src="../img/images.png" alt="Vinicíus Rosas Jardim">    
+                </div>
+            </div>
+            
+            <h2 class="name2">
+                Vinicíus Everton Jardim <br>
+            </h2>
+            
+            <div class="fn2">
+                <span>Responsável por:</span>
+            </div>
+
+            <p class="description">
+                <span>Conteudo para o site</span> <br>
+                <span>Pesquisa/Conteúdo:</span> Pesquisa e seleção de conteúdos para o projeto<br>
+            </p>
+                
+            <div class="fn2">
+                <span>Sobre mim</span>
+            </div>      
+            
+            <p class="description">
+                Olá, sou Vinícius, responsável pela parte de conteúdo deste projeto, como alguém que procrastina muito, sei como isso afeta de forma prejudicial a nossa vida, tanto profissional quanto estudantil, espero que o conteúdo aqui presente e este projeto como um todo, possa te auxiliar a superar este obstáculo.
+            </p>
+            
+            <div class="social-media-buttons">
+                <a class="social-media-item" target="_blank" href="https://www.instagram.com/viniciuse99">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a class="social-media-item" target="_blank" href="https://mail.google.com/mail/?view=cm&fs=1&to=vinicciusjardim2010@hotmail.com&su=Assunto&body=Mensagem">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="port8">
+        <div class="port_content">
+
+            <h2 class="name1">
+                Créditos
+            </h2>
+
+            <p class="description">
+                <span>
+                    Aqui expressamos nossa profunda gratidão a todas as pessoas que contribuíram para enriquecer este projeto. Somos imensamente gratos a cada um de vocês!
+                </span>
+            </p>
+
+            <div class="fn2">
+                Ana Carolina - Bruno Khedy - Bruno Medeiros - Gabriel de Almeida - Gabriel Tessari - Guilherme Souza - João Botelho - Joel Massarioli - Leonardo Treviso (Orientador) - Lorraine Teixeira - Marcos Queiroz - Márcio Machado - Matheus Muniz - Maxuel Neves - Otávio?
+            </div> <br> <br>
+            
+            <p class="description">
+                <span>
+                    Também dedicamos nossa total atenção aos criadores de conteúdo que disponibilizaram esses vídeos, oferecendo apoio incondicional ao Tempo Valioso.
+                </span>
+            </p>
+            
+            <div class="fn2">
+                Larissa Kich
+            </div>
+
+            <p class="description">Graças a Lari tivemos a base para iniciar nosso projeto, com seu vídeo:<a class= "link" href="https://www.youtube.com/watch?v=8V3mw1w6h0U&t=1s" target="_blank">Como fazer uma LANDING PAGE responsiva e animada | HTML, CSS e JavaScript (JQUERY)</a>. Este vídeo foi essencial para a criação do Tempo Valioso, proporcionando todo o conhecimento básico necessário para desenvolver um website com sua principal característica: a responsividade!</p>
+
+            <div class="social-media-buttons">
+                    <a class="social-media-item" target="_blank" href="https://www.youtube.com/@larissakich">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                <a class="social-media-item" target="_blank" href="https://www.instagram.com/lariikich">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a class="social-media-item" target="_blank" href="https://www.linkedin.com/in/larissakich/">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+            </div>
+
+            <br>
+
+            <div class="fn2">
+                Pedro Dev
+            </div>
+
+            <p class="description">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus nemo iure delectus adipisci inventore odit repellat perspiciatis, dolorem fuga aliquam. Omnis, exercitationem iusto. Molestias illo iure non cupiditate autem provident?
+                <a class="link" target="_blank" href="https://www.youtube.com/watch?v=TPXr2fkz0EM">COMO FAZER DEPLOY FRONT END / BACK END - NETLIFY - VERCEL
+                </a>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat commodi minus dolorum iste pariatur qui, quasi officiis ad nemo facere ullam ipsam in debitis consectetur! Minima dolorem libero incidunt quo?
+            </p>
+
+            <div class="social-media-buttons">
+                <a class="social-media-item" target="_blank" href="https://www.youtube.com/@pedrosilvadev_">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+            <a class="social-media-item" target="_blank" href="https://www.instagram.com/p3dro_dev/">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a class="social-media-item" target="_blank" href="https://www.linkedin.com/in/pedroh-dev/">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a class="social-media-item" target="_blank" href="https://github.com/Dev-Pedrosv">
+                <i class="fa-brands fa-github"></i>
+            </a>
+        </div>
+
+        </div>
+    </section>
+
+    </div>
+    <footer>
+        <img src="../img/wave-footer.svg" alt="">
+        <div id="footer_items">
+            <span id="copyright">&copy 2024 Tempo Valioso</span>
+            <div class="social-media-buttons">
+                <a class="social-media-item" target="_blank" href="https://www.instagram.com/_tempovalioso/"> 
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a class="social-media-item" target="_blank" href="https://mail.google.com/mail/?view=cm&fs=1&to=suporte.tempovalioso@gmail.com&su=Assunto&body=Mensagem">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+   
+</body>
+</html>
