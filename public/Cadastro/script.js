@@ -1,5 +1,5 @@
 // Defina a URL da API usando variável de ambiente
-const API_URL = import.meta.env.VITE_API_URL || 'https://seu-backend.onrender.com';
+const API_URL = import.meta.env.VITE_API_URL || 'https://full-render-vjr5.onrender.com';
 
 const formCadastro = document.getElementById('formCadastro');
 const usuarioName = document.getElementById('txtUsuario');
