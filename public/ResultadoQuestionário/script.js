@@ -57,7 +57,7 @@ window.onload = async function () {
         };
         try {
             console.log(pontosUsuario)
-            const response = await fetch('http://localhost:3000/api/usuariosPontos', {
+            const response = await fetch('https://full-render-vjr5.onrender.com/api/usuariosPontos', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(pontosUsuario)  // Enviando a descrição ao backend
